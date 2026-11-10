@@ -1,0 +1,6 @@
+{
+  "name": "SI-TAMU Kemenag Lebak",
+  "description": "Sistem Informasi Buku Tamu Digital Kantor Kementerian Agama Kabupaten Lebak. Melayani dengan Ikhlas Beramal, Cepat, Akuntabel, dan Transparan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

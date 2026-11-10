@@ -1,0 +1,64 @@
+===================================================================================
+PETUNJUK INSTALASI DAN CARA MENJALANKAN APLIKASI
+SI-TAMU KEMENAG LEBAK (SISTEM INFORMASI BUKU TAMU DIGITAL)
+KANTOR KEMENTERIAN AGAMA KABUPATEN LEBAK
+PHP Murni (Native) + Database MySQL
+===================================================================================
+
+A. MENJALANKAN DI LARAGON (Direkomendasikan):
+-----------------------------------------------------------------------------------
+1. Pastikan Laragon sudah terpasang di komputer Anda.
+2. Buka folder root web Laragon:
+   C:\laragon\www\
+3. Buat folder baru dengan nama: sitamu
+   (Sehingga jalurnya menjadi: C:\laragon\www\sitamu\)
+4. Salin (copy) SELURUH isi folder ini (termasuk folder assets/ dan database_sitamu.sql)
+   ke dalam folder C:\laragon\www\sitamu\
+5. Buka aplikasi Laragon, lalu klik tombol "Start All" untuk menyalakan Apache dan MySQL.
+6. Klik tombol "Database" di Laragon atau buka phpMyAdmin di browser:
+   http://localhost/phpmyadmin
+7. Buat database baru bernama: db_sitamu_lebak
+8. Klik menu "Import", pilih file "database_sitamu.sql", lalu klik "Kirim" / "Go".
+9. Selesai! Buka aplikasi di browser:
+   - Mode Kiosk Tamu  : http://localhost/sitamu atau http://sitamu.test
+   - Portal Petugas   : http://localhost/sitamu/login.php
+
+B. MENJALANKAN DI XAMPP:
+-----------------------------------------------------------------------------------
+1. Buka folder htdocs XAMPP:
+   C:\xampp\htdocs\
+2. Buat folder baru bernama: sitamu
+   (Sehingga jalurnya menjadi: C:\xampp\htdocs\sitamu\)
+3. Salin (copy) seluruh file proyek ini ke dalam C:\xampp\htdocs\sitamu\
+4. Buka XAMPP Control Panel, lalu klik "Start" pada Apache dan MySQL.
+5. Buka browser ke: http://localhost/phpmyadmin
+6. Buat database baru dengan nama: db_sitamu_lebak
+7. Pilih database tersebut, klik menu "Import", pilih file "database_sitamu.sql", lalu klik "Import".
+8. Buka browser:
+   - Mode Tamu Publik : http://localhost/sitamu/
+   - Login Petugas    : http://localhost/sitamu/login.php
+
+C. INFORMASI AKUN LOGIN BAWAAN:
+-----------------------------------------------------------------------------------
+1. Akun Administrator (Hak Akses Penuh: Dashboard, Buku Tamu, Survei, Report, Setting):
+   - Username : admin
+   - Password : admin123
+
+2. Akun Operator PTSP (Hak Akses Terbatas: Dashboard, Buku Tamu, Survei):
+   - Username : operator
+   - Password : operator123
+
+D. STRUKTUR FILE PROYEK:
+-----------------------------------------------------------------------------------
+- config.php            : Konfigurasi koneksi database PDO, timezone WIB, dan fungsi guard
+- database_sitamu.sql   : Skema tabel MySQL (users, tamu, pengaturan) dan data awal
+- index.php             : Halaman Kiosk Tamu Publik dengan latar transparan petugas Kemenag
+- login.php             : Halaman Login Petugas dengan tombol demo cepat
+- dashboard.php         : Dashboard statistik tamu harian, bulanan, dan total
+- tamu.php              : Riwayat tamu lengkap dengan tombol Kirim Survei WhatsApp
+- pengaturan.php        : Form pengaturan Running Text dan Link & Template Survei WhatsApp
+- cetak.php             : Format Cetak Dokumen Resmi dengan Kop Surat Kemenag Lebak & Tanda Tangan
+- export_excel.php      : Ekspor data tamu ke format Microsoft Excel (.csv)
+- logout.php            : Keluar dari sistem
+- assets/               : Logo resmi Kemenag RI dan Foto Petugas PTSP
+===================================================================================
